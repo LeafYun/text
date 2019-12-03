@@ -7,6 +7,8 @@ import Three from '@/pages/three/three_a'
 import OneOne from '@/pages/one/one_one/one_one_a'
 import All from '@/pages/all'
 import Limit from '@/pages/limit'
+import Start from '@/pages/start'
+import Four from "@/pages/four/four"
 
 Vue.use(Router)
 
@@ -26,8 +28,8 @@ const router = new Router({
     },
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'Start',
+      component: Start
     },
     {
       path: '/one',
@@ -56,6 +58,11 @@ const router = new Router({
       path:'/limit',
       name:'Limit',
       component:Limit,
+    },
+    {
+      path:'/four',
+      name:'Four',
+      component:Four
     }
   ]
 })
