@@ -209,6 +209,12 @@ export default {
 
 </script>
 <style lang="less" scoped>
+html{
+  height: 100%;
+}
+body{
+  height: 100%;
+}
 .el-table--enable-row-hover[data-v-a1f4c2ea]{
     font-size:14px;
     height:800px

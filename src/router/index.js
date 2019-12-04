@@ -28,8 +28,8 @@ const router = new Router({
     },
     {
       path: '/',
-      name: 'Start',
-      component: Start
+      name: 'One',
+      component: One
     },
     {
       path: '/one',

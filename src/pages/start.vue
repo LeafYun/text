@@ -82,6 +82,12 @@ export default {
     padding:0;
     margin: 0;
 }
+html{
+  height: 100%;
+}
+body{
+  height: 100%;
+}
 .content{
     width: 100%;
     height: 920px;
