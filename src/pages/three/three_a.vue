@@ -6,9 +6,29 @@
     </div> -->
     <div class="box">
         <div class="top">
+            <p>&nbsp;&nbsp;&nbsp;数据概况</p>
+            <ul>
+                <li>
+                    总数据<br><br>
+                    25
+                </li>
+                <li>
+                    待处理<br><br>
+                    50
+                </li>
+                <li>
+                    已处理<br><br>
+                    10
+                </li>
+                <li>
+                    近期评级<br><br>
+                    良好
+                </li>
+            </ul>
         </div>
         <div class="content">
             <div class="left">
+                <p>&nbsp;&nbsp;&nbsp;基础雷达图</P>
                 <div id="myChart" :style="{width:'100%',height:'600px'}"></div>
             </div>
             <div class="right">
@@ -57,7 +77,7 @@ export default {
             //绘制图表
             myChart.setOption({
                 title: {
-        text: '基础雷达图'
+        text: ''
     },
     tooltip: {},
     legend: {
@@ -103,14 +123,19 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-
+.el-timeline-item__tail{
+    background-color:red;
+    color: red;
+    border: 1px solid red;
+}
+.el-timeline-item__node, .el-timeline-item__node--normal, .el-timeline-item__node--{
+            background-color: rebeccapurple;
+        }
 .right{
     .block{
         margin-left: 50px;
-        .el-timeline-item__node{
-            background-color: rebeccapurple;
-        }
-        .el-timeline-item__tail{
+        
+        .el-timeline-item__node, .el-timeline-item__node--normal, .el-timeline-item__node--{
             border: 2px solid rebeccapurple;
         }
     }
@@ -139,6 +164,12 @@ body{
             height: 100%;
             border: 1px solid orange;
             float: left;
+            p{
+        text-align: left;
+        font-size: 18px;
+        color: #303133;
+        font-weight: bold;
+    }
         }
         .right{
             width: 35%;
@@ -146,6 +177,31 @@ body{
             border: 1px solid green;
             float: right;
         }
+    }
+}
+.top{
+    p{
+        text-align: left;
+        font-size: 18px;
+        color: #303133;
+        font-weight: bold;
+    }
+    ul{
+        display: flex;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    ul li{
+        font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+        margin:0;
+        // border: 1px solid red;
+        border-right: 1px solid rebeccapurple;
+        flex-direction: row;
+        list-style-type: none;
+        flex-grow: 1;
+        font-size: 25px;
+        color: #303133;
     }
 }
 </style>

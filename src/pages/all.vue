@@ -1,7 +1,10 @@
 <template>
-    <div>
+    <div class="box">
+        <div class="content">
+        <img src="../assets/01.jpg"/>
         <p>{{content}}</p>
         <slot></slot>
+        </div>
     </div>
 </template>
 <script>
@@ -25,6 +28,21 @@ export default {
         color:green;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: 24px;
+    }
+}
+// .right[data-v-f4e1e8e4]{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+.box{
+    border: 1px solid blue;
+    height:918px;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    .content{
+        margin: 8%;
     }
 }
 </style>

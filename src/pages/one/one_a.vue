@@ -23,7 +23,8 @@
             <el-table-column
                 prop="date"
                 label="日期"
-                width="180">
+                min-width="20%"
+                >
             </el-table-column>
             <el-table-column
                 prop="name"
@@ -33,6 +34,13 @@
             <el-table-column
                 prop="address"
                 label="地址">
+            </el-table-column>
+            <el-table-column
+                prop="address"
+                label="操作"
+                >
+                <button>详情</button>
+                <button>删除</button>
             </el-table-column>
             </el-table>
             <!-- <span class="demonstration">完整功能</span> -->
@@ -222,4 +230,20 @@ body{
 .el-pagination{
         margin-top:15px;
     }
+.el-table ,.el-table--fit ,.el-table--border ,.el-table--enable-row-hover ,.el-table--enable-row-transition{
+  // text-align: center;
+  // color: red;
+  // .el-table .cell{
+  //   text-align: center
+  // }
+}
+// .el-table .cell{
+//     text-align: center
+//   }
+.el-table__row{
+  text-align: center
+}
+.cell[data-v-a1f4c2ea]{
+  text-align: center;
+}
 </style>

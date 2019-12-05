@@ -34,8 +34,8 @@
           <el-menu-item index="1-3"><router-link to="/three">three</router-link></el-menu-item>
         <!-- </el-menu-item-group> -->
         <el-submenu index="1-4">
-          <template slot="title"><router-link to="/four">four</router-link></template>
-          <el-menu-item index="1-4-1">选项1</el-menu-item>
+          <template slot="title">four</template>
+          <el-menu-item index="1-4-1"><router-link to="/four">four_one</router-link></el-menu-item>
         </el-submenu>
       </el-submenu>
       <el-menu-item index="2">
