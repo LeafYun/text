@@ -23,24 +23,43 @@
             <el-table-column
                 prop="date"
                 label="日期"
-                min-width="20%"
+                width="180"
+                align="center"
                 >
             </el-table-column>
             <el-table-column
                 prop="name"
+                align="center"
                 label="姓名"
                 width="180">
             </el-table-column>
             <el-table-column
                 prop="address"
+                align="center"
                 label="地址">
             </el-table-column>
             <el-table-column
-                prop="address"
+                prop="content"
+                align="center"
+                label="事件内容">
+                这就是事件的内容
+            </el-table-column>
+            <el-table-column
+                prop="number"
+                align="center"
+                label="联系方式(电话号码)">
+                15873151878
+            </el-table-column>
+            <el-table-column
+                prop="operation"
+                align="center"
                 label="操作"
                 >
-                <button>详情</button>
-                <button>删除</button>
+                <!-- <button @click="dianji">详情</button> -->
+                <template>
+                  <el-button type="primary" round @click="open">详情</el-button>
+                  <el-button type="warning"  round @click="shanchu">删除</el-button>
+                </template>
             </el-table-column>
             </el-table>
             <!-- <span class="demonstration">完整功能</span> -->
@@ -48,10 +67,10 @@
                 @size-change="handleSizeChange"
                 @current-change="handleCurrentChange"
                 :current-page="currentPage4"
-                :page-sizes="[100, 200, 300, 400]"
-                :page-size="100"
+                :page-sizes="[5, 10, 15, 20]"
+                :page-size="5"
                 layout="total, sizes, prev, pager, next, jumper"
-                :total="400">
+                :total="40">
             </el-pagination>
         </div>
     </div>
@@ -75,113 +94,143 @@ export default {
              tableData: [{
           date: '2016-05-02',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
+          address: '上海市普陀区金沙江路 1518 '
         }, {
           date: '2016-05-04',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
+          address: '上海市普陀区金沙江路 1517 '
         }, {
           date: '2016-05-01',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
+          address: '上海市普陀区金沙江路 1519 '
         }, {
           date: '2016-05-03',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
+          address: '上海市普陀区金沙江路 1516 '
         }
         , {
           date: '2016-05-04',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
+          address: '上海市普陀区金沙江路 1517 '
         }, {
           date: '2016-05-01',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
+          address: '上海市普陀区金沙江路 1519 '
         }, {
           date: '2016-05-03',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
+          address: '上海市普陀区金沙江路 1516 '
         }
         , {
           date: '2016-05-04',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
+          address: '上海市普陀区金沙江路 1517 '
         }, {
           date: '2016-05-01',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
+          address: '上海市普陀区金沙江路 1519 '
         }, {
           date: '2016-05-03',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
+          address: '上海市普陀区金沙江路 1516 '
         }
         , {
           date: '2016-05-04',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
+          address: '上海市普陀区金沙江路 1517 '
         }, {
           date: '2016-05-01',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
+          address: '上海市普陀区金沙江路 1519 '
         }, {
           date: '2016-05-03',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
+          address: '上海市普陀区金沙江路 1516 '
         }
         , {
           date: '2016-05-04',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
+          address: '上海市普陀区金沙江路 1517 '
         }, {
           date: '2016-05-01',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
+          address: '上海市普陀区金沙江路 1519 '
         }, {
           date: '2016-05-03',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
+          address: '上海市普陀区金沙江路 1516 '
         }
         , {
           date: '2016-05-04',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
+          address: '上海市普陀区金沙江路 1517 '
         }, {
           date: '2016-05-01',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
+          address: '上海市普陀区金沙江路 1519 '
         }, {
           date: '2016-05-03',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
+          address: '上海市普陀区金沙江路 1516 '
         }],
         Datas:[
             {
           date: '2016-05-02',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
+          address: '上海市普陀区金沙江路 1518 '
         }, {
           date: '2016-05-04',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
+          address: '上海市普陀区金沙江路 1517 '
         }, {
           date: '2016-05-01',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
+          address: '上海市普陀区金沙江路 1519 '
         }, {
           date: '2016-05-03',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
+          address: '上海市普陀区金沙江路 1516 '
         }
         , {
           date: '2016-05-04',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
+          address: '上海市普陀区金沙江路 1517 '
         }
         ],
         sum:5,//分页中每页展示出来的内容的条数
         })
     },
     methods:{
+      open(index) {
+      console.log(index.path[4].cells[0].textContent);
+      console.log(index);
+      let content_one = index.path[4].cells[0].textContent;
+      let content_two = index.path[4].cells[1].textContent;
+      let content_three = index.path[4].cells[2].textContent;
+      let content_four = index.path[4].cells[3].textContent;
+      let content_five = index.path[4].cells[4].textContent;
+        this.$alert(
+          `日期：${content_one}
+          姓名：${content_two}
+          地址：${content_three}
+          事件内容：${content_four}
+          联系方式(电话号码)：${content_five}`, 
+          '内容详情', {
+          confirmButtonText: '确定',
+          callback: action => {
+            // this.$message({
+            //   type: 'info',
+            //   message: `action: ${ action }`
+            // });
+          }
+        });
+      },
+        dianji(){
+          alert("this is content")
+        },
+        shanchu(){
+          alert("no")
+        },
         jia(){
             this.$store.state.count++;
             // alert("this is jia_function")

@@ -5,7 +5,7 @@
     <div class="box">
         <p>事件处理</p>
         <el-form ref="form" :model="form" label-width="80px">
-  <el-form-item label="活动名称">
+  <el-form-item label="">
     <el-input v-model="form.name"></el-input>
   </el-form-item>
   <el-form-item label="活动区域">
@@ -23,7 +23,7 @@
       <el-time-picker placeholder="选择时间" v-model="form.date2" style="width: 100%;"></el-time-picker>
     </el-col>
   </el-form-item>
-  <el-form-item label="即时配送">
+  <el-form-item label="加急处理">
     <el-switch v-model="form.delivery"></el-switch>
   </el-form-item>
   <el-form-item label="活动性质">
